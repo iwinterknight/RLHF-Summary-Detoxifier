@@ -1,7 +1,7 @@
 import os
 from transformers import AutoTokenizer
 from util.evaluation_utils import create_toxicity_evaluator, evaluate_toxicity
-from util.model_utils import create_peft_model, create_ppo_and_ref_model, create_reward_model_pipeline
+from util.train_utils import create_peft_model, create_ppo_and_ref_model, create_reward_model_pipeline
 from data.load_dataset import load_dataset
 from trl.core import LengthSampler
 import tqdm
