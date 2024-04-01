@@ -12,5 +12,5 @@ Summarizing dialogue is a ubiquitous medium for knowledge extraction for a multi
 
 The instruction fine-tuned version of the Encoder-Decoder style T5 architecture, FLAN T5 XL comprises 3B parameters pre-trained on various language tasks like translation, summarization, question-answering etc.
 The encoder will be used to represent conversation data and the decoder will be provided a supervision signal from the ground truth summaries provided in the DialogSum dataset. The fine-tuning will be done in a low rank adaptation setting to meet the compute constraints.
-Reward Model : Offensive Speech Classifier, Bias detection model, Sentiment Classifier with cumulative loss fusion through a homoscedasticity model (aligning loss metrics for dissimilar distributions) 
+Reward Model : Offensive Speech Classifier, Bias detection model, Sentiment Classifier with cumulative loss fusion through a joint training model.
 To prevent Reward Hacking while aligning summaries to human preferences, a Kullback-Leibler divergence loss will be used in addition to the reinforcement learning alignment objective. This is to ensure retention of factual content from the dialogue, while redacting/transforming unsuitable content for summary alignment.
