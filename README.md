@@ -23,3 +23,15 @@ Salients :
 1. Under rich real-life scenarios, including more diverse task-oriented scenarios.
 2. Have clear communication patterns and intents, which is valuable to serve as summarization sources.
 3. Have a reasonable length, which comforts the purpose of automatic summarization.
+
+# Model
+# Flan T5 XL
+Flan T5 is the instruction fine-tuned version of the encoder-decoder style T5 model (Publication link : https://arxiv.org/pdf/2210.11416.pdf). The Flan T5 XL comprising of 3B parameters is first fine-tuned on the DialogSum dataset with low rank adaptive(LoRA) parameters, using the open-sourced `peft` transformer library. This reduces the trainable parameters to ~18M, viz. approximately 0.66% of the total trainable parameters. 
+<p align="center">
+  <img width="413" alt="LoRA" src="https://github.com/iwinterknight/RLHF-Summary-Detoxifier/assets/37212007/4a8ecc37-3035-4216-aba6-06fbb9360312">
+</p>
+
+PEFT fine-tuning causes a slight but reasonable drop in performance compared to the original instruction-tuned model, as seen below in the ROUGE metric values.
+<p align="center">
+  <img width="732" alt="peft_results" src="https://github.com/iwinterknight/RLHF-Summary-Detoxifier/assets/37212007/b5edb5dc-3b37-43a9-ac38-dc63a89be099">
+</p>
