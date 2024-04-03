@@ -36,7 +36,7 @@ PEFT fine-tuning causes a slight but reasonable drop in performance compared to 
   <img width="732" alt="peft_results" src="https://github.com/iwinterknight/RLHF-Summary-Detoxifier/assets/37212007/b5edb5dc-3b37-43a9-ac38-dc63a89be099">
 </p>
 
-# Training
+# RLHF
 The instruction tuned peft model is trained on the RLHF objective for alignment to produce summaries without offensive/bias tone and content. The RL objective uses Proximal Policy Optimization(PPO) to jointly train against weighted rewards scored from a sentiment scorer model and a bias detection model. In order to prevent reward hacking a Kullback–Leibler(KL) divergence penalty is added to the training objective.
 
 # Installation
@@ -46,3 +46,24 @@ git clone https://github.com/iwinterknight/RLHF-Summary-Detoxifier.git
 cd RLHF-Summary-Detoxifier
 pip install -r requirements.txt
 ```
+
+# Training
+To train the 3B model, run:
+```
+python -m torch.distributed.launch train.py
+        --model_name $MODEL_NAME
+        --dataset_name $DATASET_NAME
+        --toxicity_model_name $TOXICITY_MODEL_NAME
+        --saved_model_path $MODEL_PATH
+        --alignment_method ppo
+```
+
+# Evaluation
+```
+python evaluate.py
+      --model_name $MODEL_NAME
+      --dataset_name $DATASET_NAME
+      --toxicity_model_name $TOXICITY_MODEL_NAME
+      --saved_model_path $MODEL_PATH
+```
+
