@@ -37,4 +37,4 @@ PEFT fine-tuning causes a slight but reasonable drop in performance compared to 
 </p>
 
 # Training
-The instruction tuned peft model is trained on the RLHF objective for alignment to produce summaries without offensive/bias tone and content.
+The instruction tuned peft model is trained on the RLHF objective for alignment to produce summaries without offensive/bias tone and content. The RL objective uses Proximal Policy Optimization(PPO) to jointly train against weighted rewards scored from a sentiment scorer model and a bias detection model. In order to prevent reward hacking a Kullback–Leibler(KL) divergence penalty is added to the training objective.
