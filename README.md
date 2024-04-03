@@ -16,6 +16,7 @@ Reward Model : Offensive Speech Classifier, Bias detection model, Sentiment Clas
 To prevent Reward Hacking while aligning summaries to human preferences, a Kullback-Leibler divergence loss will be used in addition to the reinforcement learning alignment objective. This is to ensure retention of factual content from the dialogue, while redacting/transforming unsuitable content for summary alignment.
 
 # Datasets and Models
+# Dataset
 # DialogSum
 DialogSum is a large-scale dialogue summarization dataset, consisting of 13,460 dialogues with corresponding manually labeled summaries and topics, focusing on dialogues under rich real-life scenarios, including more diverse task-oriented dialogues.
 
