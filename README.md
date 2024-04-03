@@ -35,3 +35,6 @@ PEFT fine-tuning causes a slight but reasonable drop in performance compared to 
 <p align="center">
   <img width="732" alt="peft_results" src="https://github.com/iwinterknight/RLHF-Summary-Detoxifier/assets/37212007/b5edb5dc-3b37-43a9-ac38-dc63a89be099">
 </p>
+
+# Training
+The instruction tuned peft model is trained on the RLHF objective for alignment to produce summaries without offensive/bias tone and content.
