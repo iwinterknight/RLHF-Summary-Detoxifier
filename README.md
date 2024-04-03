@@ -41,8 +41,8 @@ The instruction tuned peft model is trained on the RLHF objective for alignment 
 
 # Installation
 Clone the repository and install the required packages:
-'''
+```
 git clone https://github.com/iwinterknight/RLHF-Summary-Detoxifier.git
 cd RLHF-Summary-Detoxifier
 pip install -r requirements.txt
-'''
+```
