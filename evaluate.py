@@ -120,7 +120,7 @@ def evaluate(args):
     toxicity_model_name = args.toxicity_model_name
     saved_model_path = args.saved_model_path
 
-    dataset = load_dataset(model_name, dataset_name)
+    dataset = load_rlhf_dataset(model_name, dataset_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name, device_map="auto")
     peft_model = create_peft_model(model_name)
     ppo_model, ref_model = create_ppo_and_ref_model(peft_model)
