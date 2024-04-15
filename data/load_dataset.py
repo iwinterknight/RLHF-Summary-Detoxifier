@@ -42,7 +42,7 @@ def build_dataset(model_name,
     return dataset_splits
 
 
-def load_dataset(model_name, dataset_name):
+def load_rlhf_dataset(model_name, dataset_name):
     dataset = build_dataset(model_name=model_name,
                             dataset_name=dataset_name,
                             input_min_text_length=200,
