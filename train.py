@@ -89,7 +89,7 @@ def train_ppo(args):
     output_max_length = 400
     output_length_sampler = LengthSampler(output_min_length, output_max_length)
     tokenizer = AutoTokenizer.from_pretrained(model_name, device_map="auto")
-    dataset = load_dataset(model_name, dataset_name)
+    dataset = load_rlhf_dataset(model_name, dataset_name)
 
     peft_model = create_peft_model(model_name)
     ppo_model, ref_model = create_ppo_and_ref_model(peft_model)
